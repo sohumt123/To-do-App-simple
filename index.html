@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- (We’ll fill this in later) -->
+  <script src="script.js" defer ></script>
+  <div class="container">
+  <h1>My To-Do List : <span id="task-count"></span></h1>
+
+  <!-- Search Field -->
+  <div class="search-container">
+    <input
+      type="text"
+      id="search-input"
+      placeholder="Search tasks..."
+    />
+  </div>
+
+  <!-- Form to Add a New Task -->
+  <form id="task-form">
+    <input
+      type="text"
+      id="task-input"
+      placeholder="Add a new task..."
+      required
+    />
+    <button type="submit">Add</button>
+  </form>
+
+  <!-- Task List -->
+  <ul id="task-list"></ul>
+
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+/* ---------------------------------
+   0. Root Design Tokens
+---------------------------------- */
+:root {
+  --clr-bg:          #f5f6fa;
+  --clr-surface:     #ffffff;
+  --clr-primary:     #3b82f6;  /* blue-500 */
+  --clr-primary-dark:#2563eb;  /* blue-600 */
+  --clr-danger:      #ef4444;  /* red-500 */
+  --clr-text:        #24292f;
+  --radius:          8px;
+  --shadow:          0 4px 14px rgba(0,0,0,0.08);
+  --transition:      150ms ease;
+  font-size: 16px;            /* 1 rem */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* ---------------------------------
+   1. Page & Container
+---------------------------------- */
+body {
+  margin: 0;
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  display: grid;
+  place-content: center;      /* perfectly centers the card */
+  min-height: 100vh;
+}
+
+.container {
+  background: var(--clr-surface);
+  padding: 2rem 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: min(90vw, 500px);    /* responsive clamp */
+}
+
+h1 {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ---------------------------------
+   2. Form: Add Task
+---------------------------------- */
+#task-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+#task-input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d1d5db;  /* gray-300 */
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border var(--transition);
+}
+
+#task-input:focus {
+  outline: none;
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.25); /* blue focus ring */
+}
+
+#task-form button {
+  padding: 0 1rem;
+  background: var(--clr-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background var(--transition), transform var(--transition);
+}
+
+#task-form button:hover {
+  background: var(--clr-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* ---------------------------------
+   3. Search Field
+---------------------------------- */
+.search-container {
+  margin-bottom: 1rem;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
+}
+
+/* ---------------------------------
+   4. Task List
+---------------------------------- */
+#task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0.25rem;
+  border-bottom: 1px solid #e5e7eb;   /* gray-200 */
+}
+
+#task-list li:last-child {
+  border-bottom: none;
+}
+
+/* text span */
+#task-list span {
+  flex: 1;
+  word-break: break-word;             /* wrap long words */
+}
+
+/* Delete button */
+#task-list button {
+  background: var(--clr-danger);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background var(--transition);
+}
+
+#task-list button:hover {
+  background: #dc2626; /* red-600 */
+}
+
+/* ---------------------------------
+   5. Completed State (future-proof)
+---------------------------------- */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.65;
+}
